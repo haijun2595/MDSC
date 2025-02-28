@@ -186,7 +186,7 @@
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright [yyyy] [name of copyright owner]
+   Copyright 2024 Haijun Tang, The First Affiliated Hospital of Guangxi Medical University
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -199,3 +199,9 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+  ADDITIONAL CLAUSE:
+  This license is provided under the condition that any commercial use of
+  the licensed material requires explicit permission from the original
+  author(s). Non-commercial use is permitted without prior permission,
+  but the original author(s) must be credited.
