@@ -1,4 +1,3 @@
-# 加载所需库
 library(AUCell)
 library(Seurat)
 library(SingleCellExperiment)
