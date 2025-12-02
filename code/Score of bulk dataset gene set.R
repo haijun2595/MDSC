@@ -74,25 +74,6 @@ library(rlang)
 library(ggplot2)
 library(ggpubr)
 for (gene_set_name in names(gene_set_list)) {
-  ridge_plot <- ggplot(merged_data_all, aes(x = !!sym(gene_set_name), fill = PMN_MDSC_Level)) + 
-    geom_density(alpha = 0.6) +
-    scale_fill_manual(values = c("high" = "#6e336e", "low" = "#008a5d")) +
-    labs(title = paste(gene_set_name, "Score"),
-         x = paste(gene_set_name, "Score")) +
-    theme_minimal() +
-    theme(
-      strip.text = element_text(size = 12, face = "bold"),
-      legend.position = "top",
-      panel.grid = element_blank(),  
-      axis.title.y = element_blank() 
-    )
-  
-  ggsave(paste0("Density_Plot_", gene_set_name, ".png"), 
-         plot = ridge_plot, 
-         width = 5, 
-         height = 4)  
-  
-
   boxplot_plot <- ggplot(merged_data_all, aes(x = PMN_MDSC_Level, y = !!sym(gene_set_name), fill = PMN_MDSC_Level)) +
     geom_boxplot(alpha = 0.6, width = 0.4) +
     stat_compare_means(aes(group = PMN_MDSC_Level), label = "p.signif", method = "wilcox.test",comparisons = list(c("low", "high"))) +
@@ -117,5 +98,6 @@ for (gene_set_name in names(gene_set_list)) {
          width = 4,  
          height = 4)  
 }
+
 
 
