@@ -45,10 +45,10 @@ print(len(lrs))
 np.random.seed(1000000) 
 
 st.tl.cci.run(data,
-                        lrs, min_spots = 20, 
-                        distance=None, 
-                        n_pairs=10000, 
-                         n_cpus=80)
+              lrs, min_spots = 20, 
+              distance=None, 
+              n_pairs=10000, 
+              n_cpus=80)
 
 
 
@@ -84,9 +84,6 @@ plt.savefig(data_dir+'s2.lr_n_spots500.pdf',dpi=600)
 plt.close()
 
 
-r_path = "/home/ps/R-4.0.5/doc/RESOURCES"
-st.tl.cci.run_lr_go(data, r_path)
-st.pl.lr_go(data, lr_text_fp={'weight': 'bold', 'size': 10}, rot=15,figsize=(12,3.65), n_top=15, show=False)
 
 best_lr = data.uns['lr_summary'].index.values[0]
 
@@ -127,12 +124,8 @@ lr_summary_index = data.uns['lr_summary'].index.values
 df = pd.DataFrame(lr_summary_index, columns=['Interaction'])
 df.to_csv(data_dir+'lr_summary_interactions.csv', index=False)
 
-
-
-
-selected_lrs = ["COL1A1_CD44","FN1_CD44","COL1A2_CD44"]
-selected_lrs = ["FN1_CD44"]
-stats = ['lr_scores', 'p_adjs', '-log10(p_adjs)','lr_sig_scores'] #'p_vals',
+selected_lrs = ["ANXA1_FPR1","FN1_CD44"]
+stats = ['lr_scores', 'p_adjs', '-log10(p_adjs)','lr_sig_scores']
 for lr in selected_lrs:
     fig, axes = plt.subplots(ncols=len(stats), figsize=(4 * len(stats), 6))  
     for j, stat in enumerate(stats):
