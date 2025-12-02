@@ -22,12 +22,11 @@ cancer_types <- list.dirs(input_dir, full.names = FALSE, recursive = FALSE)
 
 geneSets = list(
   "Fibroblast Score" = c("COL1A1", "ACTA2", "POSTN", "COL6A1"),
-    'PMN_MDSC Score' = c("AQP9", "BCL2A1", "C5AR1", "CXCL1", "CXCR1", "CXCR2", "ADGRE2",
-                       "FCGR3B", "FPR1", "FPR2", "ADGRG3", "HCK", "ICAM1", "IL1B", "IL1R2",
-                       "CXCL8", "LILRB2", "LILRB3", "LYN", "MEFV", "NCF2", "OSM", "PLAUR",
-                       "PTAFR", "S100A12", "S100A8", "S100A9", "SLC11A1", "SOD2", "TREM1", 
-                       "TIMP2", "STAT3", "STAT6", "IRF1", "PTGS2", 
-                       "IL4R", "MCEMP1", "NFKBIA", "TGFB1", "VEGFA"),
+    'PMN_MDSC Score' = c("FCGR3B","CXCR2","CXCL8","IRF1","PTGS2","SOD2","OSM","FPR1",  
+                      "FPR2","AQP9","ADGRG3","CXCR1","CXCL1","BCL2A1","TREM1","ICAM1",  
+                      "LYN","STAT3","NCF2","LILRB3","C5AR1","S100A8","IL1R2","PLAUR",  
+                      "HCK","IL1B","NFKBIA","S100A9","S100A12","TIMP2","SLC11A1","MCEMP1",  
+                      "TGFB1","LILRB2","VEGFA","NFKB1","CTSC"),
   'Exhaustion Score' = c("PDCD1", "LAYN", "HAVCR2", "LAG3", "CTLA4", "TIGIT", "TOX", "VSIR", "BTLA", "ENTPD1",
                          "CD3D", "CD3E","CD3G","CD8A","CD4","CD8B"),
 'Antigen_Presentation Score'=c("ACTR1A", "ACTR1B", "AP1B1", "AP1M2", "AP2B1", "AP2M1", "CAPZB", "CD74", "CTSF", "CTSH", "CTSO", "DCTN2", "DNM3", "DYNC1I1", "DYNC1I2", "DYNC1LI1", "HLA-DMA", "HLA-DMB", "HLA-DOA", "HLA-DOB", "HLA-DPA1", "HLA-DPB1", "HLA-DQA1", "HLADQA2", "HLA-DQB1", "HLA-DQB2", "HLA-DRA", "HLA-DRB1", "HLA-DRB3", "HLA-DRB4", "HLA-DRB5", "KIF26A", "KIF2A", "KIF3B", "KIF3C", "KIF4B", "KIF5B", "KIFAP3", "KLC1", "KLC4", "SAR1B", "SEC13", "SPTBN2", "TUBA1A", "TUBA1B", "TUBA3C", "TUBA3D", "TUBA4A", "TUBA4B", "TUBA8", "TUBB2A", "TUBB2B", "TUBB3", "TUBB4A", "TUBB4B", "TUBB8", "TUBB8B"),
