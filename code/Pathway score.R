@@ -1,7 +1,6 @@
 library(Seurat)
 library(tidyverse)
 library(pheatmap)
-#gene_signatures_path <- "gene signature.txt"
 load("/Neu_sub_Dele_harmony.Rdata")
 gene_signatures_path <- "gene signature.txt"
 
