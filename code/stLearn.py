@@ -1,5 +1,4 @@
 
-conda install -c conda-forge stlearn
 ############################################################
 conda activate stlearn 
 python
@@ -16,29 +15,14 @@ data_dir = "/mnt/GSM7974888/"
 data = st.Read10X(data_dir) 
 data.var_names_make_unique() 
 print(data.uns["spatial"].keys()) 
-#dict_keys(['PT_ST_Visium'])
 st.add.image(adata=data,
              imgpath=data_dir+"spatial/tissue_hires_image.png",
              library_id="Sample_5687-AJ-S2-D_GTCGCGACAA-TGGCAGATTG", visium=True)
-
-
-#st.pp.filter_genes(data, min_cells=3)   
-#sc.pp.filter_genes(data, min_counts=10)
-
 data.obs['nFeature_Spatial'] = np.sum(data.X > 0, axis=1)  
 data.obs['nCount_Spatial'] = np.sum(data.X, axis=1) 
 data.obs['percent_mt'] = np.sum(data[:, data.var_names.str.startswith('MT-')].X, axis=1).A1 / np.sum(data.X, axis=1).A1 * 100
 data.obs['percent_rb'] = np.sum(data[:, data.var_names.str.startswith('RP[LS]')].X, axis=1).A1 / np.sum(data.X, axis=1).A1 * 100
-data = data[(data.obs['nFeature_Spatial'] >= minFeature) & 
-                         (data.obs['percent_mt'] <= maxMT) &
-                         (data.obs['nCount_Spatial'] >= minCount), :]
-
-
 st.pp.normalize_total(data)
- 
-
-
-
 lrs = st.tl.cci.load_lrs(['connectomeDB2020_lit'], species='human')
 print(len(lrs))
 
